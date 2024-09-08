@@ -29,6 +29,7 @@
 --------All txt styles
 */
 .base-ph {
+  margin: 0;
   display: flex;
   gap: 1rem;
   color: var(--text1, #121416);

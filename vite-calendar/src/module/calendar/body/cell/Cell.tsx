@@ -31,28 +31,27 @@ const Cell = ({ day, mode, page }: CellProps) => {
 
   /**default Mini Mode */
   return (
-    <div>asdf</div>
-    // <div
-    //   className={miniMode.miniCalendarDateStyle({
-    //     calendarDisplayState: miniMode.getMiniModeCalendarDisplayState(
-    //       day,
-    //       currentDate
-    //     ),
-    //     monthMembership: miniMode.getMiniModeMonthMembershipStatus(
-    //       day,
-    //       currentDate
-    //     ),
-    //     dateRelativeToToday: miniMode.getMiniModeDateRelativeToToday(day),
-    //   })}
-    // >
-    //   <span
-    //     className={miniMode.dayStyleVariant({
-    //       dayType: miniMode.getMiniModeDayType(day),
-    //     })}
-    //   >
-    //     {formatDate}
-    //   </span>
-    // </div>
+    <div
+      className={miniMode.miniCalendarDateStyle({
+        calendarDisplayState: miniMode.getMiniModeCalendarDisplayState(
+          day,
+          currentDate
+        ),
+        monthMembership: miniMode.getMiniModeMonthMembershipStatus(
+          day,
+          currentDate
+        ),
+        dateRelativeToToday: miniMode.getMiniModeDateRelativeToToday(day),
+      })}
+    >
+      <span
+        className={miniMode.dayStyleVariant({
+          dayType: miniMode.getMiniModeDayType(day),
+        })}
+      >
+        {formatDate}
+      </span>
+    </div>
   );
 };
 
