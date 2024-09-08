@@ -1,0 +1,53 @@
+.big-calendar-base {
+  display: grid;
+  height: 13rem;
+  gap: 1rem;
+  grid-template-rows: repeat(2, auto);
+  justify-items: start;
+  font-size: 1.4rem;
+  cursor: default;
+}
+
+.big-calendar-current {
+  opacity: 1;
+  background-color: #fff;
+}
+
+.big-calendar-current-month {
+  opacity: 1;
+}
+
+.big-calendar-not-current-month {
+  visibility: hidden;
+  background-color: #ffa800;
+}
+
+.big-calendar-current-date {
+  opacity: 1;
+  position: relative;
+}
+
+.big-calendar-current-date::after {
+  content: "오늘" !important;
+  position: absolute !important;
+  display: flex !important;
+  padding: 0.5rem 1rem !important;
+  justify-content: center !important;
+  align-items: center !important;
+  color: #fff !important;
+  top: -0.3rem !important;
+  left: 4rem !important;
+  border-radius: 50rem !important;
+  background: #ffa800 !important;
+}
+
+.big-calendar-prev-date,
+.big-calendar-after-date {
+  opacity: 0.5;
+}
+
+@media screen and (max-width: 1520px) {
+  .big-calendar-base {
+    height: 10vh;
+  }
+}
