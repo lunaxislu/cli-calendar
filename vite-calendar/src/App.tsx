@@ -1,11 +1,7 @@
-import { useState } from "react";
-
-import Calendar from "./module/calendar/Calendar";
-import { CALENDAR_SIZE } from "./module/calendar/const/const";
+import Calendar from "./module/calendar-css-module/Calendar";
+import { CALENDAR_SIZE } from "./module/calendar-css-module/const/const";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <>
       <Calendar />
