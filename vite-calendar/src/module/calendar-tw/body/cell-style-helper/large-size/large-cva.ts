@@ -30,7 +30,7 @@ const bigCalendarDateStyle = cva(BASE_GRID, {
       BEFORE_TODAY: "opacity-50", // Date before today
       //Adjust to padding instead of width of the TODAY
       TODAY:
-        "relative opacity-100 after:content-['오늘'] after:absolute after:flex after:justify-center after:items-center after:top-[-3px] after:left-[40px] after:bg-[#ffa800] after:text-white after:rounded-full after:px-[10px]", // Today's date
+        "relative opacity-100 after:content-['오늘'] after:absolute after:flex after:justify-center after:items-center after:top-[-3px] after:left-[40px] after:bg-[#ffa800] after:text-white after:rounded-full after:px-[10px] after:[w-28px] after:[h-28px] after:[p-4px]", // Today's date
       AFTER_TODAY: "opacity-50", // Date after today
     },
   },
