@@ -1,16 +1,26 @@
-.mini-calendar-base {
+.mini-calendar-base-grid {
+  /*default grid*/
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+  /*---------*/
+
   display: grid;
-  width: 3rem;
-  height: 4.4rem;
-  padding: 0.5rem 1rem;
-  gap: 0.5rem;
+  /* width: 30px; 
+  cell width style 
+  */
+  height: 44px;
+  gap: 5px;
   grid-template-rows: repeat(2, auto);
   justify-items: center;
-  font-size: 1.4rem;
+  place-content: center;
+  font-size: 14px;
 }
 
 .mini-calendar-base span {
-  padding: 0.6rem;
+  padding: 6px;
 }
 
 .current-calendar {
@@ -42,8 +52,8 @@
   border-radius: 50%;
   background: rgba(255, 168, 0, 0.5);
   color: #000;
-  width: 2rem;
-  height: 2rem;
+  width: 20px;
+  height: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -56,9 +66,9 @@
 
 .mini-day-base {
   display: grid;
-  width: 2.3rem;
-  height: 2.3rem;
-  gap: 1rem;
+  width: 23px;
+  height: 23px;
+  gap: 10px;
   justify-items: center;
   align-items: center;
 }
@@ -79,8 +89,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 2.5rem;
-  height: 2.5rem;
+  width: 25px;
+  height: 25px;
   border-radius: 50%;
   border: 1px solid #7433ff;
   background-color: rgba(116, 51, 255, 0.1);

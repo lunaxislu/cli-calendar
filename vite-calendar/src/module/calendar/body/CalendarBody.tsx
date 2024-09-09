@@ -4,10 +4,11 @@ import { FORMAT_BODY_DATE } from "../const/const";
 import Cell from "./cell/Cell";
 import styles from "./calendar-body.module.css";
 interface CalendarBodyProps extends HTMLAttributes<"div"> {
-  mode: CalendarModeType;
+  size: CalendarSizeType;
+  mode?: CalendarModeType;
   page?: CalendarPageType;
 }
-const CalendarBody = ({ mode, page, ...props }: CalendarBodyProps) => {
+const CalendarBody = ({ size, page }: CalendarBodyProps) => {
   const currentDate = dayjs(); // Temporary value, Please manage this globally
 
   // The start day of the week that the monthStart belongs to
@@ -22,13 +23,13 @@ const CalendarBody = ({ mode, page, ...props }: CalendarBodyProps) => {
     for (let i = 0; i < 7; i++) {
       const itemKey = day.format(FORMAT_BODY_DATE);
 
-      days.push(<Cell key={itemKey} page={page} mode={mode} day={day} />);
+      days.push(<Cell key={itemKey} page={page} size={size} day={day} />);
       day = day.add(1, "day");
     }
     row.push(
       <div key={days[0].key} className={styles["row-grid"]}>
         {days}
-      </div>
+      </div>,
     );
     days = [];
   }

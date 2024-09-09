@@ -1,40 +1,42 @@
 import clsx from "clsx";
 import styles from "./calendar.module.css";
-import { CALENDAR_MODE } from "./const/const";
+
+import { CALENDAR_SIZE } from "./const/const";
 import { ComponentPropsWithoutRef, useMemo } from "react";
 import HeaderGrid from "./headerController/HeaderGrid";
 import CalendarDays from "./days/CalendarDays";
 import CalendarBody from "./body/CalendarBody";
 
 interface CalendarProps extends ComponentPropsWithoutRef<"div"> {
+  size?: CalendarSizeType;
   mode?: CalendarModeType;
   page?: CalendarPageType; // If you want to put a condition on each page
 }
-const Calendar = ({ mode = "MINI_MODE", page, ...props }: CalendarProps) => {
+const Calendar = ({ size = CALENDAR_SIZE.SMALL }: CalendarProps) => {
   const calendarGrid = useMemo(
     () =>
-      clsx({
-        [styles["mini-calendar-grid"]]: mode === CALENDAR_MODE.MINI_MODE,
-        [styles["big-calendar-grid"]]: mode === CALENDAR_MODE.BIG_MODE,
+      clsx(styles["reset"], {
+        [styles["sm-calendar-grid"]]: size === CALENDAR_SIZE.SMALL,
+        [styles["lg-calendar-grid"]]: size === CALENDAR_SIZE.LARGE,
       }),
-    []
+    [size],
   );
 
   const calendarInnerGrid = useMemo(
     () =>
       clsx({
-        [styles["mini-mode-header-grid"]]: mode === CALENDAR_MODE.MINI_MODE,
-        [styles["big-mode-grid"]]: mode === CALENDAR_MODE.BIG_MODE,
+        [styles["sm-size-header-grid"]]: size === CALENDAR_SIZE.SMALL,
+        [styles["big-mode-grid"]]: size === CALENDAR_SIZE.LARGE,
       }),
-    []
+    [size],
   );
 
   return (
     <div className={calendarGrid}>
       <div className={calendarInnerGrid}>
-        <HeaderGrid mode={mode} />
-        <CalendarDays mode={mode} />
-        <CalendarBody mode={mode} />
+        <HeaderGrid size={size} />
+        <CalendarDays size={size} />
+        <CalendarBody size={size} />
         {/* {props.children}  lf you want.*/}
       </div>
     </div>

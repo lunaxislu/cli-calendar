@@ -2,18 +2,34 @@
 @explain grid
 mode type : mini
 */
-.mini-calendar-grid {
+.sm-calendar-grid {
+  /*default grid*/
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+  /*---------*/
+
   display: inline-flex;
-  padding: 2rem;
+  padding: 20px;
   flex-direction: column;
   align-items: flex-start;
-  gap: 1.5rem;
-  border-radius: 0.5rem;
+  gap: 10.5px;
+  border-radius: 5px;
   border: 1px solid #ededed;
   background: #fff;
 }
 
-.mini-mode-header-grid {
+.sm-size-header-grid {
+  /*default grid*/
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+  /*---------*/
+
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -25,26 +41,41 @@ mode type : mini
 @explain grid
 mode type : big
 */
-.big-calendar-grid {
+.lg-calendar-grid {
+  /*default grid*/
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+  /*---------*/
+
   display: flex;
-  max-width: 152rem;
+  max-width: 1520px;
   margin: 0 auto;
   width: 100%;
   align-items: flex-start;
-  gap: clamp(2%, 4rem, 4rem);
+  gap: clamp(2%, 40px, 40px);
   justify-content: space-between;
-  margin-top: 2rem;
-  padding-bottom: 5rem;
+  margin-top: 20px;
+  padding-bottom: 50px;
 }
 
 .big-mode-grid {
+  /*default grid*/
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+  /*---------*/
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 2rem;
+  gap: 20px;
   width: 78%;
   max-width: 1260px;
-  padding: 3rem;
-  border-radius: 2rem;
+  padding: 30px;
+  border-radius: 20px;
   border: 1px solid #ededed;
 }

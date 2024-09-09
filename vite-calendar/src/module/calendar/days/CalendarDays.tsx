@@ -1,6 +1,6 @@
 import React, { useMemo } from "react";
 import styles from "./days.module.css";
-import { CALENDAR_MODE, DAYS } from "../const/const";
+import { CALENDAR_SIZE, DAYS } from "../const/const";
 import clsx from "clsx";
 
 const rowClassName = {
@@ -16,18 +16,18 @@ const colClassName = {
 const cellTxtClassName = {
   miniCell: styles["mini-cell-text"],
 };
-const CalendarDays = ({ mode }: { mode: CalendarModeType }) => {
+const CalendarDays = ({ size }: { size: CalendarSizeType }) => {
   const containerGrid = useMemo(
-    () => rowClassName[mode === CALENDAR_MODE.MINI_MODE ? "miniRow" : "bigRow"],
-    [mode]
+    () => rowClassName[size === CALENDAR_SIZE.SMALL ? "miniRow" : "bigRow"],
+    [size],
   );
   const colGrid = useMemo(
-    () => colClassName[mode === CALENDAR_MODE.MINI_MODE ? "miniCol" : "bigCol"],
-    [mode]
+    () => colClassName[size === CALENDAR_SIZE.SMALL ? "miniCol" : "bigCol"],
+    [size],
   );
   const cellTxt = useMemo(
-    () => (mode === CALENDAR_MODE.MINI_MODE ? cellTxtClassName.miniCell : null),
-    [mode]
+    () => (size === CALENDAR_SIZE.SMALL ? cellTxtClassName.miniCell : null),
+    [size],
   );
 
   return (

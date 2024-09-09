@@ -1,4 +1,8 @@
 .calendar-base-btn {
+  /*reset btn css*/
+  all: unset;
+  /*------------*/
+
   background-color: transparent;
   position: absolute;
   top: 50%;
@@ -6,7 +10,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 1.2rem; /*default Button size*/
+  width: 12px; /*default Button size*/
   padding: 0;
   cursor: pointer;
 }
@@ -15,12 +19,12 @@
   ----------mini
   */
 .mini-btn-right {
-  width: 2.2rem;
+  width: 22px;
   right: 0;
 }
 
 .mini-btn-left {
-  width: 2.2rem;
+  width: 22px;
   left: 0;
 }
 
@@ -29,24 +33,31 @@
   */
 
 .big-grid {
+  /*default grid*/
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+  /*---------*/
   display: flex;
-  gap: 1rem;
+  gap: 10px;
 }
 
 .big-calendar-btn {
   position: static;
   display: flex;
-  width: 5.5rem;
-  height: 5.5rem;
+  width: 55px;
+  height: 55px;
   transform: translateY(0);
-  padding: 1rem !important;
+  padding: 10px !important;
   margin: 0;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 1rem;
-  border-radius: 0.8rem;
-  border-radius: 0.8rem;
+  gap: 10px;
+  border-radius: 8px;
+  border-radius: 8px;
   background: var(--bg-g, #f7f7f7);
 }
 

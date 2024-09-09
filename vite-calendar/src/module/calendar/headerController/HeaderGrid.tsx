@@ -1,28 +1,28 @@
 import clsx from "clsx";
 import dayjs from "dayjs";
 import styles from "./headerGrid.module.css";
-import { CALENDAR_MODE, MONTH_FORMAT, YEAR_FORMAT } from "../const/const";
+import { CALENDAR_SIZE, MONTH_FORMAT, YEAR_FORMAT } from "../const/const";
 import HeaderController from "./HeaderController";
 import React, { useMemo } from "react";
-const HeaderGrid = ({ mode }: { mode: CalendarModeType }) => {
+const HeaderGrid = ({ size }: { size: CalendarSizeType }) => {
   const currentData = dayjs();
 
   const gridClasses = useMemo(
     () =>
       clsx(styles["base-grid"], {
-        [styles["mini-grid"]]: mode === CALENDAR_MODE.MINI_MODE,
-        [styles["big-grig"]]: mode === CALENDAR_MODE.BIG_MODE,
+        [styles["mini-grid"]]: size === CALENDAR_SIZE.SMALL,
+        [styles["big-grid"]]: size === CALENDAR_SIZE.LARGE,
       }),
-    [mode]
+    [size],
   );
 
   const txtClasses = useMemo(
     () =>
       clsx({
-        [styles["mini-txt"]]: mode === CALENDAR_MODE.MINI_MODE,
-        [styles["big-txt"]]: mode === CALENDAR_MODE.BIG_MODE,
+        [styles["mini-txt"]]: size === CALENDAR_SIZE.SMALL,
+        [styles["big-txt"]]: size === CALENDAR_SIZE.LARGE,
       }),
-    [mode]
+    [size],
   );
   return (
     <div className={gridClasses}>
@@ -30,7 +30,7 @@ const HeaderGrid = ({ mode }: { mode: CalendarModeType }) => {
         <span className={txtClasses}>{currentData.format(YEAR_FORMAT)}</span>
         {currentData.format(MONTH_FORMAT)}
       </p>
-      <HeaderController mode={mode} />
+      <HeaderController size={size} />
     </div>
   );
 };

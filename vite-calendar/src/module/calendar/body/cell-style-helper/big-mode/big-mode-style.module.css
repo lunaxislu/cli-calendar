@@ -1,10 +1,18 @@
-.big-calendar-base {
+.big-calendar-base-grid {
+  /*default grid*/
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+  /*---------*/
+
   display: grid;
-  height: 13rem;
-  gap: 1rem;
+  height: 130px;
+  gap: 10px;
   grid-template-rows: repeat(2, auto);
   justify-items: start;
-  font-size: 1.4rem;
+  font-size: 14px;
   cursor: default;
 }
 
@@ -31,13 +39,13 @@
   content: "오늘" !important;
   position: absolute !important;
   display: flex !important;
-  padding: 0.5rem 1rem !important;
+  padding: 5px 10px !important;
   justify-content: center !important;
   align-items: center !important;
   color: #fff !important;
-  top: -0.3rem !important;
-  left: 4rem !important;
-  border-radius: 50rem !important;
+  top: -3px !important;
+  left: 40px !important;
+  border-radius: 50% !important;
   background: #ffa800 !important;
 }
 

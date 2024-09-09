@@ -1,7 +1,7 @@
 import { cva } from "class-variance-authority";
 import styles from "./mini-mode-style.module.css";
 // Mini mode style
-const miniCalendarDateStyle = cva(styles["mini-calendar-base"], {
+const miniCalendarDateStyle = cva(styles["mini-calendar-base-grid"], {
   variants: {
     // calendarDisplayState: Indicates whether the date belongs to the currently rendered calendar
     // ACTIVE: Date in the currently rendered calendar

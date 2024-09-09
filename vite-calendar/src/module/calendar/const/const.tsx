@@ -1,7 +1,7 @@
-export const CALENDAR_MODE = {
-  MINI_MODE: "MINI_MODE",
-  BIG_MODE: "BIG_MODE",
-};
+export const CALENDAR_SIZE = {
+  SMALL: "SMALL_SIZE",
+  LARGE: "LARGE_SIZE",
+} as const;
 
 /**
  * @explain "This is a constant value used in CalendarDays.tsx/jsx"

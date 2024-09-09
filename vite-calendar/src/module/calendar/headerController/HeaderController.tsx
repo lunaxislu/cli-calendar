@@ -1,29 +1,29 @@
 import clsx from "clsx";
 import styles from "./headerController.module.css";
-import { CALENDAR_MODE } from "../const/const";
+import { CALENDAR_SIZE } from "../const/const";
 import { ArrowLeft, ArrowRight } from "../svg/CalendarSvgr";
 import React, { useMemo } from "react";
-const HeaderController = ({ mode }: { mode: CalendarModeType }) => {
+const HeaderController = ({ size }: { size: CalendarSizeType }) => {
   const conditionalModeClasses = useMemo(
-    () => clsx(mode === CALENDAR_MODE.BIG_MODE && styles["big-grid"]),
-    [mode]
+    () => clsx(size === CALENDAR_SIZE.LARGE && styles["big-grid"]),
+    [size],
   );
 
   const conditionalLeftButtonClasses = useMemo(
     () =>
       clsx(styles["calendar-base-btn"], {
-        [styles["mini-btn-left"]]: mode === CALENDAR_MODE.MINI_MODE,
-        [styles["big-calendar-btn"]]: mode === CALENDAR_MODE.BIG_MODE,
+        [styles["mini-btn-left"]]: size === CALENDAR_SIZE.SMALL,
+        [styles["big-calendar-btn"]]: size === CALENDAR_SIZE.LARGE,
       }),
-    [mode]
+    [size],
   );
   const conditionalRightButtonClasses = useMemo(
     () =>
       clsx(styles["calendar-base-btn"], {
-        [styles["mini-btn-right"]]: mode === CALENDAR_MODE.MINI_MODE,
-        [styles["big-calendar-btn"]]: mode === CALENDAR_MODE.BIG_MODE,
+        [styles["mini-btn-right"]]: size === CALENDAR_SIZE.SMALL,
+        [styles["big-calendar-btn"]]: size === CALENDAR_SIZE.LARGE,
       }),
-    [mode]
+    [size],
   );
   return (
     <div className={conditionalModeClasses}>

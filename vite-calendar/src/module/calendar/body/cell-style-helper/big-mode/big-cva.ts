@@ -1,7 +1,7 @@
 import { cva } from "class-variance-authority";
 import styles from "./big-mode-style.module.css";
 // big Mode Variant
-const bigCalendarDateStyle = cva(styles["big-calendar-base"], {
+const bigCalendarDateStyle = cva(styles["big-calendar-base-grid"], {
   variants: {
     // monthMembership: Indicates whether the date belongs to the current month.
     // IN_CURRENT_MONTH: Date within the current month

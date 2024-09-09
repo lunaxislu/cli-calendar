@@ -1,26 +1,27 @@
 import dayjs, { Dayjs } from "dayjs";
 import React from "react";
-import { CALENDAR_MODE, FORMAT_CELL_DATE } from "../../const/const";
+import { CALENDAR_SIZE, FORMAT_CELL_DATE } from "../../const/const";
 import { bigMode, miniMode } from "../cell-style-helper";
 
 interface CellProps {
   day: Dayjs;
-  mode: CalendarModeType;
+  size: CalendarSizeType;
+  mode?: CalendarModeType;
   page?: CalendarPageType;
 }
-const Cell = ({ day, mode, page }: CellProps) => {
+const Cell = ({ day, size }: CellProps) => {
   const currentDate = dayjs(); // Temporary value, Please manage this globally
 
   const formatDate = day.format(FORMAT_CELL_DATE).substring(6);
-  console.log(mode);
+  console.log(size);
   /** conditional*/
-  if (mode === CALENDAR_MODE.BIG_MODE)
+  if (size === CALENDAR_SIZE.LARGE)
     return (
       <div
         className={bigMode.bigCalendarDateStyle({
           monthMembership: bigMode.getBigModeMonthMembershipStatus(
             day,
-            currentDate
+            currentDate,
           ),
           dateRelativeToToday: bigMode.getBigModeDateRelativeToToday(day),
         })}
@@ -35,11 +36,11 @@ const Cell = ({ day, mode, page }: CellProps) => {
       className={miniMode.miniCalendarDateStyle({
         calendarDisplayState: miniMode.getMiniModeCalendarDisplayState(
           day,
-          currentDate
+          currentDate,
         ),
         monthMembership: miniMode.getMiniModeMonthMembershipStatus(
           day,
-          currentDate
+          currentDate,
         ),
         dateRelativeToToday: miniMode.getMiniModeDateRelativeToToday(day),
       })}
