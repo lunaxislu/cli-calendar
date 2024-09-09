@@ -29,8 +29,10 @@ When show up to large Size  Current Day Style
   content: "오늘" !important;
   position: absolute !important;
   display: flex !important;
-  padding: 10px 10px !important; /* Adjust to padding instead of width value*/
+  padding: 4px 4px !important; /* Adjust to padding instead of width value*/
   justify-content: center !important;
+  width: 28px;
+  height: 28px;
   align-items: center !important;
   color: #fff !important;
   top: -3px !important;
